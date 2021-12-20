@@ -27,9 +27,7 @@ This folder contain some files that we need to override in order to:
 **Note**: when container stopped/removed - all collections are removed
 **Note**: Solr process is run as root user which is not recommended (that is why we need that -force parameter)
 
-Next steps:
+## Next steps (to improve here)
 
-1. Use docker compose - done
-2. Use proper user (not root one)
-3. Use volumes and keep collections/z.k. state when stopping container - done
-4. Pass solr port as parameter
+1. Use proper user (not root one)
+2. Pass solr port as parameter
