@@ -29,5 +29,6 @@ This folder contain some files that we need to override in order to:
 
 ## Next steps (to improve here)
 
-1. Use proper user (not root one)
-2. Pass solr port as parameter
+1. Add support for Solr 8.4 and 8.8.2
+2. Use proper user (not root one)
+3. Pass solr port as parameter
