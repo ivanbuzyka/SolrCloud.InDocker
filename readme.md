@@ -1,5 +1,12 @@
 # Get started
 
+## Prerequisites
+
+### Create SSL certificate and local CA
+
+For detailed steps - check for exampel this file ```./SolrVersions/8.1.1/certificates/readme.md```
+Once the certificate is created (named and have appropriate certificate password - as it described in the mentioned above readme.md), it will be mapped when creating container to the folder inside container.
+
 ## To build
 
 docker compose build
