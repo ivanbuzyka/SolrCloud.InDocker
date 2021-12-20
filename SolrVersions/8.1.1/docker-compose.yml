@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  solr:
+    user: root
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ivanbuzyka/solrcloud-8.1.1:v1
+    ports:
+     - "9993:9993"
+    volumes:
+      - solrRoot:/solr-8.1.1/example/cloud/node1
+      - ./certificate:/solr-8.1.1/server/etc/certificate
+volumes:
+  solrRoot:
