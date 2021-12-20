@@ -1,6 +1,6 @@
 ## TL;DR
-Pleace the PKCS12 certificate here.
-Please name the certificate "localhost.p12" and use password "changeit" (bith are hardcoded into bin/solr.in.sh)
+Place the PKCS12 certificate here.
+Name the certificate "localhost.p12" and use password "changeit" (both are hardcoded into bin/solr.in.sh)
 
 ## Creating certificate steps (details)
 
