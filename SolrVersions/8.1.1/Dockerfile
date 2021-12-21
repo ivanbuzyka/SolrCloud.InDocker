@@ -17,8 +17,5 @@ COPY solrCloudStart.sh .
 
 COPY solr-8.1.1-overrides/ solr-8.1.1/
 
-# ToDO: ENTRYPOINT to run run SolrCloud in cloud mode with integrated zookeeper and one node
 EXPOSE 9993/tcp
-#ENTRYPOINT ["solr-8.1.1/bin/solr", "start", "-f", "-cloud", "-p", "9993", "-s", "solr-8.1.1/example/cloud/node1/solr"]
 ENTRYPOINT [ "/solrCloudStart.sh" ]
-#CMD [ "solr-8.1.1/bin/solr", "start", "-cloud", "-p", "9993"]
