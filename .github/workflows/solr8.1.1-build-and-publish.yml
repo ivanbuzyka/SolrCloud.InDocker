@@ -24,13 +24,13 @@ jobs:
       
     - name: Build the tagged Docker image
       run: docker compose -f SolrVersions/8.1.1/docker-compose.yml build
+      
+    - name: Push the latest Docker image
+      run: docker push ivanbuzyka/solrcloud-8.1.1:latest
     
     - name: Tag Docker image
       run: docker tag ivanbuzyka/solrcloud-8.1.1:latest ivanbuzyka/solrcloud-8.1.1:${{steps.vars.outputs.tag}}
       
-    - name: Push the latest Docker image
-      run: docker push ivanbuzyka/solrcloud-8.1.1:latest
-      
-    - name: Push the tag Docker image
+    - name: Push the tagged Docker image
       run: docker push ivanbuzyka/solrcloud-8.1.1:${{steps.vars.outputs.tag}}
       # docker build . --file Dockerfile --tag my-image-name:$(date +%s)
