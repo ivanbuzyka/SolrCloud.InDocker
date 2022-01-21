@@ -21,16 +21,30 @@ jobs:
     - name: Get the version
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-      
-    - name: Build the tagged Docker image
+
+    # Solr 8.1.1      
+    - name: Build the 8.1.1 Docker image
       run: docker compose -f SolrVersions/8.1.1/docker-compose.yml build
       
-    - name: Push the latest Docker image
+    - name: Push the 8.1.1 latest Docker image
       run: docker push ivanbuzyka/solrcloud-8.1.1:latest
     
-    - name: Tag Docker image
+    - name: Tag 8.1.1 Docker image
       run: docker tag ivanbuzyka/solrcloud-8.1.1:latest ivanbuzyka/solrcloud-8.1.1:${{steps.vars.outputs.tag}}
       
-    - name: Push the tagged Docker image
+    - name: Push the 8.1.1 tagged Docker image
       run: docker push ivanbuzyka/solrcloud-8.1.1:${{steps.vars.outputs.tag}}
       # docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    # Solr 8.4.1
+    - name: Build the 8.4.1 Docker image
+      run: docker compose -f SolrVersions/8.4.1/docker-compose.yml build
+      
+    - name: Push the 8.4.1 latest Docker image
+      run: docker push ivanbuzyka/solrcloud-8.4.1:latest
+    
+    - name: Tag 8.4.1 Docker image
+      run: docker tag ivanbuzyka/solrcloud-8.4.1:latest ivanbuzyka/solrcloud-8.4.1:${{steps.vars.outputs.tag}}
+      
+    - name: Push the 8.4.1 tagged Docker image
+      run: docker push ivanbuzyka/solrcloud-8.4.1:${{steps.vars.outputs.tag}}
