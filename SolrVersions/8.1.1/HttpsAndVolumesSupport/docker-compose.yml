@@ -5,11 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ivanbuzyka/solrcloud-8.4.1
+    image: ivanbuzyka/solrcloud-8.1.1-httpsandvolumes
     ports:
      - "9993:9993"
     volumes:
-      - solrRoot:/solr-8.4.1/example/cloud/node1
-      - ./certificate:/solr-8.4.1/server/etc/certificate
+      - solrRoot:/solr-8.1.1/example/cloud/node1
+      - ./certificate:/solr-8.1.1/server/etc/certificate
 volumes:
   solrRoot:

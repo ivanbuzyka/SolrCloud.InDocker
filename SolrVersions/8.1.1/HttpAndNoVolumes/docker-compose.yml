@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  solr:
+    user: root
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ivanbuzyka/solrcloud-8.1.1-httpandnovolumes
+    ports:
+     - "9993:9993"
