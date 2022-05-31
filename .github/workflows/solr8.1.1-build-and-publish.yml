@@ -8,7 +8,7 @@ jobs:
 
   build-and-push-docker-image:
     
-    name: Build Docker image and push to repositories
+    name: Build Docker images and push to repositories
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
 
     # Solr 8.1.1 HTTPS and Volumes support   
-    - name: Build the 8.1.1 Docker image
+    - name: Build the 8.1.1 HTTPS and Volumes support Docker image
       run: docker compose -f SolrVersions/8.1.1/HttpsAndVolumesSupport/docker-compose.yml build
       
     - name: Push the 8.1.1 latest Docker image
@@ -37,7 +37,7 @@ jobs:
       # docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
     # Solr 8.1.1 HTTP and NO Volumes support   
-    - name: Build the 8.1.1 Docker image
+    - name: Build the Solr 8.1.1 HTTP and NO Volumes support Docker image
       run: docker compose -f SolrVersions/8.1.1/HttpAndNoVolumes/docker-compose.yml build
       
     - name: Push the 8.1.1 latest Docker image
@@ -50,7 +50,7 @@ jobs:
       run: docker push ivanbuzyka/solrcloud-8.1.1-httpandnovolumes:${{steps.vars.outputs.tag}}
 
     # Solr 8.4.1 HTTPS and Volumes support   
-    - name: Build the 8.4.1 Docker image
+    - name: Build the 8.4.1 HTTPS and Volumes support Docker image
       run: docker compose -f SolrVersions/8.4.1/HttpsAndVolumesSupport/docker-compose.yml build
       
     - name: Push the 8.4.1 latest Docker image
@@ -63,7 +63,7 @@ jobs:
       run: docker push ivanbuzyka/solrcloud-8.4.1-httpsandvolumes:${{steps.vars.outputs.tag}}
 
     # Solr 8.4.1 HTTP and NO Volumes support
-    - name: Build the 8.4.1 Docker image
+    - name: Build the 8.4.1 HTTP and NO Volumes support Docker image
       run: docker compose -f SolrVersions/8.4.1/HttpAndNoVolumes/docker-compose.yml build
       
     - name: Push the 8.4.1 latest Docker image
