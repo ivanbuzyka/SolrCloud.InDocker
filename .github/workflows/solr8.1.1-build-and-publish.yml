@@ -24,7 +24,7 @@ jobs:
 
     # Solr 8.4.1 HTTPS and Volumes support   
     - name: Build the 8.4.1 HTTPS and Volumes support Docker image
-      run: docker compose -f SolrVersions/8.4.1/HttpsAndVolumesSupport/docker-compose.yml build --no-cache
+      run: docker compose -f SolrVersions/8.4.1/HttpsAndVolumesSupport/docker-compose.yml build
       
     - name: Push the 8.4.1 latest Docker image
       run: docker push ivanbuzyka/solrcloud-8.4.1-httpsandvolumes:latest
@@ -37,7 +37,7 @@ jobs:
 
     # Solr 8.4.1 HTTP and NO Volumes support
     - name: Build the 8.4.1 HTTP and NO Volumes support Docker image
-      run: docker compose -f SolrVersions/8.4.1/HttpAndNoVolumes/docker-compose.yml build --no-cache
+      run: docker compose -f SolrVersions/8.4.1/HttpAndNoVolumes/docker-compose.yml build
       
     - name: Push the 8.4.1 latest Docker image
       run: docker push ivanbuzyka/solrcloud-8.4.1-httpandnovolumes:latest
@@ -50,7 +50,7 @@ jobs:
 
     # Solr 8.1.1 HTTPS and Volumes support   
     - name: Build the 8.1.1 HTTPS and Volumes support Docker image
-      run: docker compose -f SolrVersions/8.1.1/HttpsAndVolumesSupport/docker-compose.yml build --no-cache
+      run: docker compose -f SolrVersions/8.1.1/HttpsAndVolumesSupport/docker-compose.yml build
       
     - name: Push the 8.1.1 latest Docker image
       run: docker push ivanbuzyka/solrcloud-8.1.1-httpsandvolumes:latest
@@ -64,7 +64,7 @@ jobs:
     
     # Solr 8.1.1 HTTP and NO Volumes support   
     - name: Build the Solr 8.1.1 HTTP and NO Volumes support Docker image
-      run: docker compose -f SolrVersions/8.1.1/HttpAndNoVolumes/docker-compose.yml build --no-cache
+      run: docker compose -f SolrVersions/8.1.1/HttpAndNoVolumes/docker-compose.yml build
       
     - name: Push the 8.1.1 latest Docker image
       run: docker push ivanbuzyka/solrcloud-8.1.1-httpandnovolumes:latest

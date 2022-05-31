@@ -3,7 +3,7 @@ services:
   solr:
     user: root
     build:
-      context: ${PWD}/SolrVersions/8.1.1/HttpsAndVolumesSupport
+      context: .
       dockerfile: Dockerfile
     image: ivanbuzyka/solrcloud-8.1.1-httpsandvolumes
     ports:
