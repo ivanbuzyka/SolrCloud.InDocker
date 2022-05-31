@@ -2,10 +2,9 @@
 
 ## Prerequisites
 
-### Create SSL certificate and local CA
+1. Since the simplified image does not provide the HTTPS, the prerequisite is to have SSL offloading on the network facility in front on the container.
+2. The simplified image does not support volumes to persist collections permanently, therefore be ready that collections will be wiped out when container removed
 
-For detailed steps - check for exampel this file ```./SolrVersions/8.1.1/certificates/readme.md```
-Once the certificate is created (named and have appropriate certificate password - as it described in the mentioned above readme.md), it will be mapped when creating container to the folder inside container.
 
 ## To run
 
@@ -27,19 +26,11 @@ Any existing collection will persist in the Docker volume
 
 ```docker compose down```
 
-## To reset any persisted collections
-
-If you would like to remove any existing collection, run following:
-
-```docker compose down -v```
-
 ## What is solr-8.1.1-overrides?
 
 This folder contain some files that we need to override in order to configure SSL and make sure we can persist collections:
 
-1. Solr.in.cmd with configured SSL properties
-2. Have a separate folder for running SolrCloud Node with Zookeeper port set explicitly to 2181.
-3. The whole Solr Node folder is stored into Docker Volume to make it persist when container is stopped or removed.
+1. Have a separate folder for running SolrCloud Node with Zookeeper port set explicitly to 2181.
 
 **Note**: Solr process is run as Linux root user which is not recommended (that is why we need ```user: root``` in the ```docker-compose.yml```)
 
