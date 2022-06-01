@@ -17,8 +17,8 @@ COPY solrCloudStart.sh .
 
 COPY solr-8.1.1-overrides/ solr-8.1.1/
 
-EXPOSE 9993/tcp
-
 RUN chmod +x solrCloudStart.sh
+
+EXPOSE 9993/tcp
 
 ENTRYPOINT [ "/solrCloudStart.sh" ]
